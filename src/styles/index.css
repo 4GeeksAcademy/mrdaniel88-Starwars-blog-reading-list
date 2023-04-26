@@ -1,3 +1,10 @@
 /* 
     General Styles
 */
+.title {
+    color:darkred;
+    font-family: 'Bruno Ace SC', cursive;
+}
+body {
+    font-family: 'Bruno Ace SC', cursive;
+}
