@@ -1,7 +1,7 @@
 import React from "react";
 
 
-export const Card = ({person}) => {
+export const PeopleCard = ({person}) => {
     return (
        
         <div className="card" style={{ width: '18em', height: 'auto', marginRight: '3em'}}>
@@ -11,7 +11,7 @@ export const Card = ({person}) => {
                 <p className="card-text">Gender: {/* {person.properties.gender} */}</p>
                 <div className="d-flex justify-content-between">
                     <a href="#" className="btn btn-outline-primary">Go somewhere</a>
-                    <a href="#" className="btn btn-outline-warning"><i class="fa-regular fa-heart"></i></a>
+                    <a href="#" className="btn btn-outline-warning"><i className="fa-regular fa-heart"></i></a>
                 </div>
             </div>
         </div>
