@@ -3,31 +3,31 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
 	return (
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-				<div class="container-fluid">
-					<a class="navbar-brand" href="#"><i class="fa-solid fa-jedi"></i></a>
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+		<nav className="navbar navbar-expand-lg navbar-light bg-light">
+				<div className="container-fluid">
+					<a className="navbar-brand" href="#"><i className="fa-solid fa-jedi"></i></a>
+					<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 						aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
+						<span className="navbar-toggler-icon"></span>
 					</button>
 
-					<div class="container-fluid collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+					<div className="container-fluid collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
 						
-						<ul class="navbar-nav mb-2 mb-lg-0">
-							<li class="nav-item dropdown">
-								<a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+						<ul className="navbar-nav mb-2 mb-lg-0">
+							<li className="nav-item dropdown">
+								<a className="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
 									aria-expanded="false">
-									<button type="button" class="btn btn-primary d-flex gap-1">Favorites<i
-										class="fa-solid fa-caret-down"></i></button>
+									<button type="button" className="btn btn-primary d-flex gap-1">Favorites<i
+										className="fa-solid fa-caret-down"></i></button>
 								</a>
-								<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
-									<li><a class="dropdown-item" href="#">Profile</a></li>
-									<li><a class="dropdown-item" href="#">Accesibility</a></li>
-									<li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+								<ul className="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
+									<li><a className="dropdown-item" href="#">Profile</a></li>
+									<li><a className="dropdown-item" href="#">Accesibility</a></li>
+									<li><a className="dropdown-item" href="#">Privacy and Data</a></li>
 									<li>
-										<hr class="dropdown-divider" />
+										<hr className="dropdown-divider" />
 									</li>
-									<li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+									<li><a className="dropdown-item text-danger" href="#">Log out</a></li>
 								</ul>
 							</li>
 						</ul>
