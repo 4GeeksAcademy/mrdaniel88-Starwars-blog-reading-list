@@ -17,7 +17,7 @@ export const Home = () => {
 	return (
 		<div className="text-center mt-5">
 			{/* {store.people && <Card/>} */}
-			<div className="overflow-scroll d-flex flex-row">
+			<div className="row flex-nowrap overflow-auto">
 				{store.people &&
 					store.people.results.map(person => (
 						<Card key={person.name} person={person}/>
