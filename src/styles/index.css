@@ -12,3 +12,7 @@ body {
 .star-wars {
     font-size: 3rem;
 }
+
+#navbarDropdown {
+    color:whitesmoke
+}

@@ -15,11 +15,14 @@ export const Navbar = () => {
 						
 						<ul className="navbar-nav mb-2 mb-lg-0">
 							<li className="nav-item dropdown">
-								<a className="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+								{/* <a className="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
 									aria-expanded="false">
 									<button type="button" className="btn btn-primary d-flex gap-1">Favorites<i
-										className="fa-solid fa-caret-down"></i></button>
-								</a>
+										className="fa-solid fa-caret-down" ></i></button>
+								</a> */}
+								<a class="nav-link dropdown-toggle btn btn-primary" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Favorites
+                  </a>
 								<ul className="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
 									<li><a className="dropdown-item" href="#">Profile</a></li>
 									<li><a className="dropdown-item" href="#">Accesibility</a></li>
