@@ -26,33 +26,6 @@ export const Home = () => {
 			<ListCards element="people"></ListCards>
 			<ListCards element="planets"></ListCards>
 			<ListCards element="vehicles"></ListCards>
-			{/* {store.people && <Card/>} */}
-			{/* <h1 className="title">Characters</h1>
-			<div className="row flex-nowrap overflow-auto mb-5">
-				{store.people &&
-					store.people.results.map(person => (
-						// getPeople(person.uid),
-						<PeopleCard key={person.name} item={person}/>
-					))}
-			</div> */}
-			{/* <h1 className="title">Vehicles</h1>
-			<div className="row flex-nowrap overflow-auto mb-5">
-				{store.vehicles &&
-					store.vehicles.results.map(vehicle => (
-						<VehicleCard key={vehicle.name} vehicle={vehicle}/>
-					))}
-			</div>
-			<h1 className="title">Planets</h1>
-			<div className="row flex-nowrap overflow-auto mb-5">
-				{store.planets &&
-					store.planets.results.map(planet => (
-						<PlanetCard key={planet.name} planet={planet}/>
-					))}
-			</div> */}
-
-
-
-
 		</div>
 	);
 }

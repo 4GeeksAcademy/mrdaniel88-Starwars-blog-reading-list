@@ -16,3 +16,7 @@ body {
 #navbarDropdown {
     color:whitesmoke
 }
+
+.item-list {
+    font-size: 0.75rem;
+}

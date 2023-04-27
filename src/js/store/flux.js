@@ -36,9 +36,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			addFavorites: (id, element, name) => {
-				let store = getStore()
-				let newFavorites = [...store.favorites, {id: (id + element), name: name}]
-				setStore({favorites:newFavorites})
+				let {favorites} = getStore()
+				if(!favorites.some(item=>item.id==id)){
+					// en caso de que NO exista, se agrega
+					setStore({favorites:[...favorites,{id:id, name:name}]})
+				}
+				else {
+					// en caso de que SI exista, se elimina
+					let index=favorites.findIndex(item=>item.id==id)
+					let newFavorites=[...favorites]
+					newFavorites.splice(index,1)
+					setStore({favorites:newFavorites})
+				}
+				// let newFavorites = [...store.favorites, {id: (id + element), name: name}]
+				// setStore({favorites:newFavorites})
 			}
 		}
 	};

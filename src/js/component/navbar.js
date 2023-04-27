@@ -21,22 +21,15 @@ export const Navbar = () => {
 
 					<ul className="navbar-nav mb-2 mb-lg-0">
 						<li className="nav-item dropdown">
-							{/* <a className="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-									aria-expanded="false">
-									<button type="button" className="btn btn-primary d-flex gap-1">Favorites<i
-										className="fa-solid fa-caret-down" ></i></button>
-								</a> */}
 							<a className="nav-link dropdown-toggle btn btn-primary" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								Favorites
 							</a>
 							<ul className="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
-								{ information?.map(info => <li><p>{info.name}</p><i class="fa-solid fa-trash-can"></i></li>) || <li>No hay favoritos</li>}
-								{/* <li><a className="dropdown-item" href="#">Accesibility</a></li>
-								<li><a className="dropdown-item" href="#">Privacy and Data</a></li>
-								<li>
-									<hr className="dropdown-divider" />
-								</li>
-								<li><a className="dropdown-item text-danger" href="#">Log out</a></li> */}
+								{information?.map(info => <li >
+									<p className="item-list d-flex justify-content-between">{info.name}
+										<i class="fa-solid fa-trash-can"></i>
+									</p>
+								</li>) || <li>No hay favoritos</li>}
 							</ul>
 						</li>
 					</ul>
