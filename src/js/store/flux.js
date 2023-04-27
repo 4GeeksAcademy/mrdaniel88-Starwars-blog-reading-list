@@ -13,27 +13,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 					if (!response.ok) return response.status
 					let data = await response.json()
 					let obj = {}
-					obj[element] = data
+					obj[element] = data.results.map(item=>({
+						...item,
+						img:`https://starwars-visualguide.com/assets/img/${element=="people"?"characters":element}/${item.uid}.jpg`
+					}))
 					setStore(obj)
 				}
 				catch (error) {
 					console.error(error)
 				}
 
-			},
-			fetchPeople: async (id) => {
-				let baseUrl = `https://www.swapi.tech/api/people/${id}`
-				try {
-					let response = await fetch(baseUrl)
-					if (!response.ok) return response.status
-					let data = await response.json()
-					let objPeople = {}
-					objPeople[id] = data
-					setStore(objPeople)
-				}
-				catch (error) {
-					console.error(error)
-				}
 			},
 			addFavorites: (id, element, name) => {
 				let {favorites} = getStore()

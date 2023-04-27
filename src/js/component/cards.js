@@ -12,7 +12,7 @@ export const ListCards = ({element}) => {
         <>
         <h1 className="title">{element}</h1><div className="row flex-nowrap overflow-auto mb-5">
             {
-                store[element]?.results.map(item => {
+                store[element]?.map(item => {
                     
                     return <PeopleCard key={item.uid} item={item} element={element}/>
                 })|| ""}
