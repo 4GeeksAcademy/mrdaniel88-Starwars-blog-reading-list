@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import { Context } from "../store/appContext";
+
 
 export const Navbar = () => {
+	const { store, actions } = useContext(Context)
+	const information = store.favorites
+
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light bg-light">
 			<div className="container-fluid">
@@ -20,17 +26,17 @@ export const Navbar = () => {
 									<button type="button" className="btn btn-primary d-flex gap-1">Favorites<i
 										className="fa-solid fa-caret-down" ></i></button>
 								</a> */}
-							<a class="nav-link dropdown-toggle btn btn-primary" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<a className="nav-link dropdown-toggle btn btn-primary" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								Favorites
 							</a>
 							<ul className="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
-								<li><a className="dropdown-item" href="#">Profile</a></li>
-								<li><a className="dropdown-item" href="#">Accesibility</a></li>
+								{ information?.map(info => <li><p>{info.name}</p><i class="fa-solid fa-trash-can"></i></li>) || <li>No hay favoritos</li>}
+								{/* <li><a className="dropdown-item" href="#">Accesibility</a></li>
 								<li><a className="dropdown-item" href="#">Privacy and Data</a></li>
 								<li>
 									<hr className="dropdown-divider" />
 								</li>
-								<li><a className="dropdown-item text-danger" href="#">Log out</a></li>
+								<li><a className="dropdown-item text-danger" href="#">Log out</a></li> */}
 							</ul>
 						</li>
 					</ul>
@@ -39,3 +45,5 @@ export const Navbar = () => {
 		</nav>
 	);
 };
+
+

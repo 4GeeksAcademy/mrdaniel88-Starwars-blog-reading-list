@@ -5,6 +5,8 @@ import { Context } from "../store/appContext";
 import { PeopleCard } from "../component/peopleCard";
 import { VehicleCard } from "../component/vehicleCard";
 import { PlanetCard } from "../component/planetCard";
+import { element } from "prop-types";
+import { ListCards } from "../component/cards";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context)
@@ -15,18 +17,25 @@ export const Home = () => {
 		actions.fetchStarWars("vehicles")
 	}, [])
 
+	// let getPeople = (id) => {
+	// 	actions.fetchPeople(id)
+	// }
 
 	return (
 		<div className="text-center mt-5">
+			<ListCards element="people"></ListCards>
+			<ListCards element="planets"></ListCards>
+			<ListCards element="vehicles"></ListCards>
 			{/* {store.people && <Card/>} */}
-			<h1 className="title">Characters</h1>
+			{/* <h1 className="title">Characters</h1>
 			<div className="row flex-nowrap overflow-auto mb-5">
 				{store.people &&
 					store.people.results.map(person => (
-						<PeopleCard key={person.name} person={person}/>
+						// getPeople(person.uid),
+						<PeopleCard key={person.name} item={person}/>
 					))}
-			</div>
-			<h1 className="title">Vehicles</h1>
+			</div> */}
+			{/* <h1 className="title">Vehicles</h1>
 			<div className="row flex-nowrap overflow-auto mb-5">
 				{store.vehicles &&
 					store.vehicles.results.map(vehicle => (
@@ -39,7 +48,7 @@ export const Home = () => {
 					store.planets.results.map(planet => (
 						<PlanetCard key={planet.name} planet={planet}/>
 					))}
-			</div>
+			</div> */}
 
 
 
