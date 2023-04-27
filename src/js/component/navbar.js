@@ -25,11 +25,10 @@ export const Navbar = () => {
 								Favorites
 							</a>
 							<ul className="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
-								{information?.map(info => <li >
-									<p className="item-list d-flex justify-content-between">{info.name}
-										<i class="fa-solid fa-trash-can"></i>
-									</p>
-								</li>) || <li>No hay favoritos</li>}
+								{information?.map(info => 
+								<li key={info.name}>
+									<p>{info.name}</p>
+								</li>) || <li><p>No hay favoritos</p></li>}
 							</ul>
 						</li>
 					</ul>

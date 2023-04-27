@@ -20,8 +20,3 @@ export const ListCards = ({element}) => {
     )
 }
 
-ListCards.propTypes = {
-    name: PropTypes.string,
-    element: PropTypes.string,
-    id: PropTypes.number
-}

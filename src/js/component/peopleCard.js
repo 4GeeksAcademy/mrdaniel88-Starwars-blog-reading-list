@@ -2,11 +2,11 @@ import React, { useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 
-export const PeopleCard = ({ item }) => {
+export const PeopleCard = ({ item, element }) => {
     const { store, actions } = useContext(Context)
 
     function checkFavorite(elementId) {
-        return store.favorites.some(item=>item.id==`${item.element}/${elementId}`)
+        return store.favorites.some(item=>item.id==`${element}/${elementId}`)
     }
 
     return (
@@ -18,16 +18,12 @@ export const PeopleCard = ({ item }) => {
                 <div className="d-flex justify-content-between">
                     <a href="#" className="btn btn-outline-primary">Go somewhere</a>
                     <button href="#" className="btn btn-outline-warning"
-                        onClick={() => actions.addFavorites(`${item.element}/${item.uid}`, item.name)}>
-                        <i className={`bi bi-heart${checkFavorite(item.uid)?"-fill":""}`}></i></button>
+                        onClick={() => actions.addFavorites(`${element}/${item.uid}`, item.name)}>
+                        <i className={`bi bi-heart${checkFavorite(item.uid)?"-fill":""}`}></i>
+                    </button>
                 </div>
             </div>
         </div>
 
     );
-}
-
-PeopleCard.propTypes = {
-    name: PropTypes.string,
-    id: PropTypes.number
 }

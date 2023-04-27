@@ -1,9 +1,6 @@
 import React, { useEffect, useContext } from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import { Context } from "../store/appContext";
-import { PeopleCard } from "../component/peopleCard";
-
 import { ListCards } from "../component/cards";
 
 export const Home = () => {
