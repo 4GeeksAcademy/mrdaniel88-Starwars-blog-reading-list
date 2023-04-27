@@ -24,7 +24,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 
 			},
-			addFavorites: (id, element, name) => {
+			addFavorites: (id, name) => {
 				let {favorites} = getStore()
 				if(!favorites.some(item=>item.id==id)){
 					// en caso de que NO exista, se agrega

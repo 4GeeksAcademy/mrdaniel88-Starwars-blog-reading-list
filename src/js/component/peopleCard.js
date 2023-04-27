@@ -5,6 +5,9 @@ import PropTypes from "prop-types";
 export const PeopleCard = ({ item }) => {
     const { store, actions } = useContext(Context)
 
+    function checkFavorite(elementId) {
+        return store.favorites.some(item=>item.id==`${item.element}/${elementId}`)
+    }
 
     return (
 
@@ -15,8 +18,8 @@ export const PeopleCard = ({ item }) => {
                 <div className="d-flex justify-content-between">
                     <a href="#" className="btn btn-outline-primary">Go somewhere</a>
                     <button href="#" className="btn btn-outline-warning"
-                        onClick={() => actions.addFavorites(item.uid, item.element, item.name)}>
-                        <i className="fa-regular fa-heart"></i></button>
+                        onClick={() => actions.addFavorites(`${item.element}/${item.uid}`, item.name)}>
+                        <i className={`bi bi-heart${checkFavorite(item.uid)?"-fill":""}`}></i></button>
                 </div>
             </div>
         </div>
