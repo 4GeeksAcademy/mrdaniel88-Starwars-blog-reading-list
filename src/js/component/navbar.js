@@ -26,7 +26,7 @@ export const Navbar = () => {
 							</a>
 							<ul className="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
 								{
-									information.length == 0 ? <li>No hay</li> :
+									information.length == 0 ? <li>This is not the favorite you are looking for</li> :
 									information?.map(info =>
 										<li key={info.name}>
 											<p>{info.name}</p>
