@@ -14,7 +14,7 @@ export const ListCards = ({element}) => {
             {
                 store[element]?.map(item => {
                     return <PeopleCard key={item.uid} item={item} element={element}/>
-                })|| ""}
+                })|| <p>Loading {element}</p>}
         </div>
         </>
     )
