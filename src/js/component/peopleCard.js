@@ -9,10 +9,14 @@ export const PeopleCard = ({ item, element }) => {
         return store.favorites.some(item=>item.id==`${element}/${elementId}`)
     }
 
+    function imgError(e){
+        e.target.src="https://starwars-visualguide.com/assets/img/placeholder.jpg"
+    }
+
     return (
 
         <div className="card" style={{ width: '18em', height: 'auto', marginRight: '3em' }}>
-            <img src={item.img} className="card-img-top" alt="..." />
+            <img src={item.img} onError={imgError} className="card-img-top" alt="..." />
             <div className="card-body">
                 <h5 className="card-title"> {item.name}</h5>
                 <div className="d-flex justify-content-between">
