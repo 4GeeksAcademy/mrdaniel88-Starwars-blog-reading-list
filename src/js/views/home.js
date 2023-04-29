@@ -6,17 +6,18 @@ import { ListCards } from "../component/cards";
 export const Home = () => {
 	const { store, actions } = useContext(Context)
 
-	useEffect(() => {
-		actions.fetchStarWars("planets")
-		actions.fetchStarWars("people")
-		actions.fetchStarWars("vehicles")
-	}, [])
+	// useEffect(() => {
+	// 	actions.fetchStarWars("planets")
+	// 	actions.fetchStarWars("people")
+	// 	actions.fetchStarWars("vehicles")
+	// }, [])
 
 	return (
 		<div className="text-center mt-5">
-			<ListCards element="people"></ListCards>
+			{/* <ListCards element="people"></ListCards>
 			<ListCards element="planets"></ListCards>
-			<ListCards element="vehicles"></ListCards>
+			<ListCards element="vehicles"></ListCards> */}
+			{["planets","people","vehicles"].map(element => <ListCards key={element} element={element}/>)}
 		</div>
 	);
 }

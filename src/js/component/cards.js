@@ -7,6 +7,9 @@ import { PeopleCard } from "./peopleCard";
 export const ListCards = ({element}) => {
     const { store, actions } = useContext(Context)
 
+    useEffect(() => {
+        actions.fetchStarWars(element)
+    })
     
     return (
         <>
