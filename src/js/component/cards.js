@@ -9,7 +9,7 @@ export const ListCards = ({element}) => {
 
     useEffect(() => {
         actions.fetchStarWars(element)
-    })
+    },[])
     
     return (
         <>

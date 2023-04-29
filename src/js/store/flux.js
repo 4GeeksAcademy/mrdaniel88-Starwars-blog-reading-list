@@ -39,6 +39,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 				// let newFavorites = [...store.favorites, {id: (id + element), name: name}]
 				// setStore({favorites:newFavorites})
+			},
+			fetchElement: async (id) => {
+				let baseUrl = `https://www.swapi.tech/api/planets/${id}`
+
+				try {
+					let response = await fetch(baseUrl)
+					if (!response.ok) return response.status
+					let data = await response.json()
+					let obj = {}
+					obj[id] = data.result.properties
+					setStore(obj)
+				}
+				catch (error) {
+					console.error(error)
+				}
 			}
 		}
 	};
