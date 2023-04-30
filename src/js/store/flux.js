@@ -1,7 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			favorites: []
+			favorites: [],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -48,8 +48,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					if (!response.ok) return response.status
 					let data = await response.json()
 					let obj = {}
-					obj[id] = data.result.properties
-					setStore(obj)
+					obj[id] = {...data.result.properties, img: `https://starwars-visualguide.com/assets/img/planets/${id}.jpg` }
+					setStore({planet:obj})
 				}
 				catch (error) {
 					console.error(error)
