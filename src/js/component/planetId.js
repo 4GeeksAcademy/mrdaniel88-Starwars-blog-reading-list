@@ -9,7 +9,7 @@ export const PlanetId = () => {
     const planet = store.planet && store.planet[planetId]
 
     useEffect(() => {
-        actions.fetchElement(planetId)
+        actions.fetchElement("planets",planetId)
     }, [])
 
     return (
@@ -20,11 +20,9 @@ export const PlanetId = () => {
             {planet && Object.entries(planet).map(([key, value]) => (
                 // key != "created" || key != "edited" || key != "url" &&
                 <div key={key}>
-                    {key== "img" ? <img src={value} alt="Italian Trulli"/> : <h2>{key}: {value}</h2>}
-                    
+                    {key== "img" ? <img src={value} alt="Italian Trulli"/> : <h5>{key}: {value}</h5>}
                 </div>
             ))}
-
         </div>
     )
 }

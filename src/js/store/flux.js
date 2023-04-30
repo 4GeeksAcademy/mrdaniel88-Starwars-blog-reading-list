@@ -40,7 +40,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				// let newFavorites = [...store.favorites, {id: (id + element), name: name}]
 				// setStore({favorites:newFavorites})
 			},
-			fetchElement: async (id) => {
+			fetchElement: async (element, id) => {
 				let baseUrl = `https://www.swapi.tech/api/planets/${id}`
 
 				try {
@@ -48,7 +48,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					if (!response.ok) return response.status
 					let data = await response.json()
 					let obj = {}
-					obj[id] = {...data.result.properties, img: `https://starwars-visualguide.com/assets/img/planets/${id}.jpg` }
+					obj[id] = {...data.result.properties, img: `https://starwars-visualguide.com/assets/img/${element=="people"?"characters":element}/${id}.jpg` }
 					setStore({planet:obj})
 				}
 				catch (error) {
