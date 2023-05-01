@@ -17,7 +17,7 @@ export const Planets = () => {
                         </a>
                     </li>
                     {
-                        new Array(pages).fill("").map((ide, index) => 
+                        new Array(pages).fill("").map((item, index) => 
                         <li key={index+1} className={`page-item ${searchParams.get("page") == index+1 ? "active" : ""}`}>
                             <Link className="page-link" to={`/planets?page=${index+1}`}>{index+1}</Link>
                         </li>
