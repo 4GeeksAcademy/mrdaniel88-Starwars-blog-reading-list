@@ -30,8 +30,8 @@ export const ListCards = ({element, page}) => {
     
     return (
         <>
-        {/* {["planets","people","vehicles"].map(element => <Link key={element} onClick={()=>handleClick(element)}>go to {element}<br /></Link>)}
-        {goToElement()} */}
+        {["planets","people","vehicles"].map(element => <Link key={element} to={`/${element}`}>go to {element}<br /></Link>)}
+      
         <h1 className="title">{element}</h1><div className="row flex-nowrap overflow-auto mb-5">
             {
                 store[element]?.map(item => {
