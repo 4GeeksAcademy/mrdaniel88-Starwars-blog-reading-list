@@ -30,7 +30,7 @@ export const Planets = () => {
             <nav aria-label="Page navigation example">
                 <ul className="pagination d-flex justify-content-center">
                     <li className="page-item">
-                        <Link className="page-link" to="#" aria-label="Previous">
+                        <Link className="page-link" to={`/planets?page=${Number(searchParams.get("page"))-1}`}  aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                         </Link>
                     </li>
@@ -42,7 +42,7 @@ export const Planets = () => {
                         )
                     }
                     <li className="page-item">
-                        <Link className="page-link" to="#" aria-label="Next">
+                        <Link className="page-link" to={`/planets?page=${Number(searchParams.get("page"))+1}`} aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                         </Link>
                     </li>
