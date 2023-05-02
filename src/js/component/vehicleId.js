@@ -20,7 +20,7 @@ export const VehicleId = () => {
             {vehicle && Object.entries(vehicle).map(([key, value]) => (
                 // key != "created" || key != "edited" || key != "url" &&
                 <div key={key}>
-                    {key== "img" ? <img src={value} alt="planet"/> : <h5>{key}: {value}</h5>}
+                    {key== "img" ? <img src={value} alt="vehicle"/> : <h5>{key}: {value}</h5>}
                 </div>
             ))}
         </div>

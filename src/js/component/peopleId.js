@@ -9,7 +9,7 @@ export const PeopleId = () => {
     const person = store.element && store.element[peopleId]
 
     useEffect(() => {
-        actions.fetchElement("poeple",peopleId)
+        actions.fetchElement("people",peopleId)
     }, [])
 
     return (
