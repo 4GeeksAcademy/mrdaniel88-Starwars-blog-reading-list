@@ -3,7 +3,7 @@ import { ListCards } from "./cards";
 import { Link, useSearchParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Planets = () => {
+export const People = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const [pages, setPages] = useState(10)
 
@@ -13,7 +13,7 @@ export const Planets = () => {
 
     return (
         <div className="text-center mt-5">
-            <ListCards element="planets" page={searchParams.get("page")} />
+            <ListCards element="people" page={searchParams.get("page")} />
             <nav aria-label="Page navigation example">
                 <ul className="pagination d-flex justify-content-center">
                     <li className="page-item">
@@ -24,7 +24,7 @@ export const Planets = () => {
                     {
                         new Array(pages).fill("").map((item, index) => 
                         <li key={index+1} className={`page-item ${searchParams.get("page") == index+1 ? "active" : ""}`}>
-                            <Link className="page-link" to={`/planets?page=${index+1}`} onClick={()=>updateList(index+1)}>{index+1}</Link>
+                            <Link className="page-link" to={`/people?page=${index+1}`} onClick={()=>updateList(index+1)}>{index+1}</Link>
                         </li>
                         )
                     }

@@ -2,25 +2,25 @@ import { useParams } from "react-router";
 import React, { useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 
-export const PlanetId = () => {
+export const PeopleId = () => {
 
     const { store, actions } = useContext(Context)
-    const { planetId } = useParams()
-    const planet = store.element && store.element[planetId]
+    const { peopleId } = useParams()
+    const person = store.element && store.element[peopleId]
 
     useEffect(() => {
-        actions.fetchElement("planets",planetId)
+        actions.fetchElement("poeple",peopleId)
     }, [])
 
     return (
         <div className="text-center mt-5">
-            <h1>Planet Detail</h1>
-            <h2>Id: {planetId} </h2>
+            <h1>People Detail</h1>
+            <h2>Id: {peopleId} </h2>
             {/* <img src={planet.img} alt="Italian Trulli"/> */}
-            {planet && Object.entries(planet).map(([key, value]) => (
+            {person && Object.entries(person).map(([key, value]) => (
                 // key != "created" || key != "edited" || key != "url" &&
                 <div key={key}>
-                    {key== "img" ? <img src={value} alt="planet"/> : <h5>{key}: {value}</h5>}
+                    {key== "img" ? <img src={value} alt="person"/> : <h5>{key}: {value}</h5>}
                 </div>
             ))}
         </div>

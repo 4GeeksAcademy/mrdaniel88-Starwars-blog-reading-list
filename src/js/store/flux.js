@@ -41,7 +41,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				// setStore({favorites:newFavorites})
 			},
 			fetchElement: async (element, id) => {
-				let baseUrl = `https://www.swapi.tech/api/planets/${id}`
+				let baseUrl = `https://www.swapi.tech/api/${element}/${id}`
 
 				try {
 					let response = await fetch(baseUrl)
@@ -49,7 +49,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					let data = await response.json()
 					let obj = {}
 					obj[id] = {...data.result.properties, img: `https://starwars-visualguide.com/assets/img/${element=="people"?"characters":element}/${id}.jpg` }
-					setStore({planet:obj})
+					setStore({element:obj})
 				}
 				catch (error) {
 					console.error(error)
