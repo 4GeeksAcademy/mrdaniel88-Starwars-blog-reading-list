@@ -4,8 +4,15 @@ import { Link, useSearchParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const People = () => {
+    const { store, actions } = useContext(Context)
     const [searchParams, setSearchParams] = useSearchParams()
-    const [pages, setPages] = useState(10)
+    const [pages, setPages] = useState()
+
+    useEffect(() => {
+        actions.fetchPages("people").then((totalPages) => {
+            setPages(totalPages);
+        });
+    }, []);
 
     const updateList =(pageNumber) => {
         setSearchParams({pageNumber})

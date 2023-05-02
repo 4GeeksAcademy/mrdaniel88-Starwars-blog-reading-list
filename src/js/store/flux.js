@@ -54,6 +54,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 				catch (error) {
 					console.error(error)
 				}
+			},
+			fetchPages: async (element) => {
+				let baseUrl = `https://www.swapi.tech/api/${element}`
+
+				try {
+					let response = await fetch(baseUrl)
+					if (!response.ok) return response.status
+					let data = await response.json()
+					return data.total_pages
+				}
+				catch (error) {
+					console.error(error)
+				}
+				
 			}
 		}
 	};

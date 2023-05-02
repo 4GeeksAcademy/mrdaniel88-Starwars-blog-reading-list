@@ -3,13 +3,26 @@ import { ListCards } from "./cards";
 import { Link, useSearchParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
+
 export const Planets = () => {
+ 
+    const { store, actions } = useContext(Context)
     const [searchParams, setSearchParams] = useSearchParams()
-    const [pages, setPages] = useState(10)
+    const [pages, setPages] = useState()
+    // const numberOfPages = store.pages.planets
+
+
+    useEffect(() => {
+        actions.fetchPages("planets").then((totalPages) => {
+            setPages(totalPages);
+        });
+    }, []);
+   
 
     const updateList =(pageNumber) => {
-        setSearchParams({pageNumber})
+        setSearchParams({page:pageNumber})
     }
+    
 
     return (
         <div className="text-center mt-5">
@@ -17,7 +30,7 @@ export const Planets = () => {
             <nav aria-label="Page navigation example">
                 <ul className="pagination d-flex justify-content-center">
                     <li className="page-item">
-                        <Link className="page-link" href="#" aria-label="Previous">
+                        <Link className="page-link" to="#" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                         </Link>
                     </li>
@@ -29,7 +42,7 @@ export const Planets = () => {
                         )
                     }
                     <li className="page-item">
-                        <Link className="page-link" href="#" aria-label="Next">
+                        <Link className="page-link" to="#" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                         </Link>
                     </li>
