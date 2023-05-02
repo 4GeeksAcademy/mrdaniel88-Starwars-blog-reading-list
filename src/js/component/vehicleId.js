@@ -12,6 +12,10 @@ export const VehicleId = () => {
         actions.fetchElement("vehicles",vehicleId)
     }, [])
 
+    function imgError(e){
+        e.target.src="https://starwars-visualguide.com/assets/img/placeholder.jpg"
+    }
+
     return (
         <div className="text-center mt-5">
             <h1>Vehicle Detail</h1>
@@ -20,7 +24,7 @@ export const VehicleId = () => {
             {vehicle && Object.entries(vehicle).map(([key, value]) => (
                 // key != "created" || key != "edited" || key != "url" &&
                 <div key={key}>
-                    {key== "img" ? <img src={value} alt="vehicle"/> : <h5>{key}: {value}</h5>}
+                    {key== "img" ? <img src={value} onError={imgError} alt="vehicle"/> : <h5>{key}: {value}</h5>}
                 </div>
             ))}
         </div>

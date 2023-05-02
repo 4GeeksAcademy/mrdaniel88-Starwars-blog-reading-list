@@ -13,6 +13,10 @@ export const PlanetId = () => {
         actions.fetchElement("planets",planetId)
     }, [])
 
+    function imgError(e){
+        e.target.src="https://starwars-visualguide.com/assets/img/placeholder.jpg"
+    }
+
     return (
         <div className="text-center mt-5">
             <h1>Planet Detail</h1>
@@ -21,7 +25,7 @@ export const PlanetId = () => {
             {planet && Object.entries(planet).map(([key, value]) => (
                 // key != "created" || key != "edited" || key != "url" &&
                 <div key={key}>
-                    {key== "img" ? <img src={value} alt="planet"/> : <h5>{key}: {value}</h5>}
+                    {key== "img" ? <img src={value} onError={imgError} alt="planet"/> : <h5>{key}: {value}</h5>}
                 </div>
             ))}
         </div>

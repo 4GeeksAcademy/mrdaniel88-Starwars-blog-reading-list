@@ -12,6 +12,10 @@ export const PeopleId = () => {
         actions.fetchElement("people",peopleId)
     }, [])
 
+    function imgError(e){
+        e.target.src="https://starwars-visualguide.com/assets/img/placeholder.jpg"
+    }
+
     return (
         <div className="text-center mt-5">
             <h1>People Detail</h1>
@@ -20,7 +24,7 @@ export const PeopleId = () => {
             {person && Object.entries(person).map(([key, value]) => (
                 // key != "created" || key != "edited" || key != "url" &&
                 <div key={key}>
-                    {key== "img" ? <img src={value} alt="person"/> : <h5>{key}: {value}</h5>}
+                    {key== "img" ? <img src={value} onError={imgError} alt="person"/> : <h5>{key}: {value}</h5>}
                 </div>
             ))}
         </div>
