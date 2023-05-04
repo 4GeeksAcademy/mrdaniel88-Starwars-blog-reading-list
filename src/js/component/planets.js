@@ -18,7 +18,7 @@ export const Planets = () => {
         actions.fetchPages(elements).then((totalPages) => {
             setPages(totalPages);
         });
-    }, []);
+    }, [elements]);
    
 
     const updateList =(pageNumber) => {
