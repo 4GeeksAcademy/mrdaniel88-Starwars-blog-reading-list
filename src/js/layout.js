@@ -29,12 +29,14 @@ const Layout = () => {
 					<Navbar />
 					<Routes>
 						<Route path="/" element={<Home />} />
-						<Route path="/planets" element={<Planets />} />
+						<Route path="/:elements" element={<Planets />} />
+						<Route path="/:elements/:id" element={<PlanetId />} />
+						{/* <Route path="/planets" element={<Planets />} />
 						<Route path="/planets/:planetId" element={<PlanetId />} />
 						<Route path="/people" element={<People />} />
 						<Route path="/people/:peopleId" element={<PeopleId />} />
 						<Route path="/vehicles" element={<Vehicles />} />
-						<Route path="/vehicles/:vehicleId" element={<VehicleId />} />
+						<Route path="/vehicles/:vehicleId" element={<VehicleId />} /> */}
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
 					<Footer />

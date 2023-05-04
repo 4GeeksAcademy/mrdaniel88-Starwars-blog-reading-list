@@ -6,6 +6,7 @@ import { PeopleCard } from "./peopleCard";
 import { Planets } from "./planets";
 import { People } from "./people";
 
+
 export const ListCards = ({element, page}) => {
     const { store, actions } = useContext(Context)
     const [activeElement, setActiveElement] = useState(null);
